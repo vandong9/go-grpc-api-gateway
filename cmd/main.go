@@ -14,6 +14,6 @@ func main() {
 	}
 
 	r := gin.Default()
-	authSvc := *auth.RegisterRoutes(r, &c)
+	authSvc := *auth.RegisterRouter(r, &c)
 
 }

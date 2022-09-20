@@ -12,11 +12,10 @@ type ServiceClient struct {
 }
 
 func InitServiceClient(c *config.Config) pb.AuthServiceClient {
-
 	cc, err := grpc.Dial(c.AuthSvcUrl, grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	if err != nil {
-		return
+		return nil
 	}
 
 	return pb.NewAuthServiceClient(cc)
