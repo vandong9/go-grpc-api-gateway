@@ -1,3 +1,5 @@
+//protoc -I=./pkg/product/pb --go_out=. product.proto
+
 syntax = "proto3";
 
 package product;

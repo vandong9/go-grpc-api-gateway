@@ -1,3 +1,5 @@
+//protoc -I=./pkg/auth/pb --go_out=. auth.proto
+
 syntax = "proto3";
 
 package auth;
