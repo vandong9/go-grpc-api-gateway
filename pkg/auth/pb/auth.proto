@@ -47,7 +47,7 @@ message ValidateRequest {
 }
 
 message ValidateResponse {
-  string status = 1;
+  int64 status = 1;
   string error = 2;
   string userId = 3;
 }

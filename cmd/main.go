@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/vandong9/go-grpc-api-gateway.git/pkg/auth"
 	"github.com/vandong9/go-grpc-api-gateway.git/pkg/config"
+	"github.com/vandong9/go-grpc-api-gateway.git/pkg/product"
 	"log"
 )
 
@@ -15,5 +16,6 @@ func main() {
 
 	r := gin.Default()
 	authSvc := *auth.RegisterRouter(r, &c)
+	product.RegisterRoutes(r, &c, &authSvc)
 
 }
