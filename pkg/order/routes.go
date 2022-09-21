@@ -7,7 +7,7 @@ import (
 	"github.com/vandong9/go-grpc-api-gateway.git/pkg/order/routes"
 )
 
-func RegisterRoutes(e gin.Engine, c *config.Config, authSvc *auth.ServiceClient) {
+func RegisterRoutes(e *gin.Engine, c *config.Config, authSvc *auth.ServiceClient) {
 	middle := auth.InitMiddlewareConfig(authSvc)
 
 	svc := &ServiceClient{Client: InitOrderServiceClient(c)}
