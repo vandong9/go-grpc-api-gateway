@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"github.com/gin-gonic/gin"
@@ -19,4 +19,7 @@ func main() {
 	authSvc := *auth.RegisterRouter(r, &c)
 	product.RegisterRoutes(r, &c, &authSvc)
 	order.RegisterRoutes(r, &c, &authSvc)
+
+	r.Run(c.Port)
+
 }
